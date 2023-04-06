@@ -65,8 +65,7 @@ Promise.all([
     d3.text("nodes1.csv", function(text) {
 
       node_data = d3.csv.parse(text).map(function(d) {
-		console.log("ID is " + d['id']);
-        return +d['id'];
+        return d['id'];
 
       });
 

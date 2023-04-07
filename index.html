@@ -186,10 +186,9 @@ Promise.all([
   force.nodes(original_node_data)
 
     .links(edge_data)
-
+	.alpha(0.1);
     .start();
-	for (var i = 0; i < 20000; ++i) force.tick();
-	force.stop();
+	
 
 
 

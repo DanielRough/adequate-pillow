@@ -85,9 +85,9 @@ Promise.all([
 
   return {
 
-    source:  d.source,
+    source:  node_data[+d.source + 1],
 
-    target:  d.target,
+    target:  node_data[+d.target + 1],
 
     weight: isNaN(+d.weight) ? 0.1 : +d.weight
 

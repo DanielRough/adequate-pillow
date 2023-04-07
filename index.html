@@ -161,9 +161,9 @@ Promise.all([
 
   var force = d3.layout.force()
 
-    .charge(-30)
+    .charge(-100)
 
-    .linkDistance(20)
+    .linkDistance(100)
 
     .size([width, height]);
 
@@ -188,7 +188,7 @@ Promise.all([
     .links(edge_data)
 
     .start();
-	for (var i = 0; i < 200; ++i) force.tick();
+	for (var i = 0; i < 2000; ++i) force.tick();
 	force.stop();
 
 

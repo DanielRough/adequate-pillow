@@ -116,6 +116,9 @@ Promise.all([
 	edge_data[i].source = original_node_data[+edge_data[i].source + 1];
 	//console.log("edge_data source is " + node_data[+edge_data[i].source + 1]);
 	edge_data[i].target = original_node_data[+edge_data[i].target + 1];
+	if(original_node_data[+edge_data[i].target + 1] === undefined){
+		console.log("Nothing in node_data for node " + edge_data[i].target);
+	}
 	if(edge_data[i].target === undefined){
 		console.log("Undefined target for edge " + i + " which should be index " + (+edge_data[i].target + 1));
 	}

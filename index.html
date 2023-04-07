@@ -108,13 +108,14 @@ Promise.all([
 ]).then(function(results) {
 
   var node_data = results[0];
+  var original_node_data = d3.entries(node_data);
 
   var edge_data = results[1];
 
   for(let i = 0; i < edge_data.length; i++){
-	edge_data[i].source = node_data[+edge_data[i].source + 1];
+	edge_data[i].source = original_node_data[+edge_data[i].source + 1];
 	//console.log("edge_data source is " + node_data[+edge_data[i].source + 1]);
-	edge_data[i].target = node_data[+edge_data[i].target + 1];
+	edge_data[i].target = original_node_data[+edge_data[i].target + 1];
   }	
       console.log('Input Edge Data', edge_data);
 
@@ -134,7 +135,6 @@ Promise.all([
 
 
 
-  var original_node_data = d3.entries(node_data);
 
   console.log('edge data before weight', edge_data)
 

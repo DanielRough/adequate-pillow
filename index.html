@@ -188,7 +188,8 @@ Promise.all([
     .links(edge_data)
 
     .start();
-
+	for (var i = 0; i < 200; ++i) force.tick();
+	force.stop();
 
 
 

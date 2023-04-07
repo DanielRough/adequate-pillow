@@ -98,7 +98,6 @@ Promise.all([
 
 
 
-      console.log('Input Edge Data', edge_data);
 
       resolve(edge_data);
 
@@ -116,6 +115,7 @@ Promise.all([
 	edge_data[i].source = node_data[+edge_data[i].source + 1];
 	edge_data[i].target = node_data[+edge_data[i].target + 1];
   }	
+      console.log('Input Edge Data', edge_data);
 
   var community = jLouvain().nodes(node_data).edges(edge_data);
 

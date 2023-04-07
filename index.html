@@ -85,9 +85,9 @@ Promise.all([
 
   return {
 
-    source:  node_data[+d.source + 1],
+    source:  d.source,
 
-    target:  node_data[+d.target + 1],
+    target:  d.target,
 
     weight: isNaN(+d.weight) ? 0.1 : +d.weight
 
@@ -111,6 +111,11 @@ Promise.all([
   var node_data = results[0];
 
   var edge_data = results[1];
+
+  for(let i = 0; i < edge_data.length; i++){
+	edge_data[i].source = node_data[+edge_data[i].source + 1];
+	edge_data[i].target = node_data[+edge_data[i].target + 1];
+  }	
 
   var community = jLouvain().nodes(node_data).edges(edge_data);
 
